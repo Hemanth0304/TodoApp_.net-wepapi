@@ -1,0 +1,12 @@
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\bin\Debug\net5.0\TodoApi.core.deps.json
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\bin\Debug\net5.0\TodoApi.core.dll
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\bin\Debug\net5.0\ref\TodoApi.core.dll
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\bin\Debug\net5.0\TodoApi.core.pdb
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.csproj.AssemblyReference.cache
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.AssemblyInfoInputs.cache
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.AssemblyInfo.cs
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.csproj.CoreCompileInputs.cache
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.dll
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\ref\TodoApi.core.dll
+C:\Users\Merit.MSSPLACA002\source\repos\TodoAPI\Todo.core\obj\Debug\net5.0\TodoApi.core.pdb
