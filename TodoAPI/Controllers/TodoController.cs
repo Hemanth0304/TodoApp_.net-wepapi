@@ -32,6 +32,14 @@ namespace TodoAPI.Controllers
             return Ok(t);
         }
 
+        [HttpDelete("{id}")]
+
+        public IActionResult DeleteTask(string id)
+        {
+            _Todoservices.DeleteTask(id);
+            return NoContent();
+        }
+
 
     }
 }

@@ -10,5 +10,6 @@ namespace Todo.core
     public interface IDbClient
     {
         IMongoCollection<Todos> GetTodoCollection();
+        IMongoCollection<Users> GetUserCollection();
     }
 }

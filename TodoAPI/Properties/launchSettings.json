@@ -16,7 +16,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "TodoApp",
-        "COLLECTION_NAME": "Todoapp"
+        "COLLECTION_NAME": "Todoapp",
+        "COLLECTION_NAME2": "Users"
       }
     },
     "TodoAPI": {
@@ -28,7 +29,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "TodoApp",
-        "COLLECTION_NAME": "Todoapp"
+        "COLLECTION_NAME": "Todoapp",
+        "COLLECTION_NAME2": "Users"
       }
     }
   }

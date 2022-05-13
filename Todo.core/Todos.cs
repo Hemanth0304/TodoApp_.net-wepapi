@@ -21,8 +21,11 @@ namespace Todo.core
         public bool Status { get; set; }
 
         public string Name { get; set; }
-        [BsonElement("Task")]
-        public string[]? Task { get; set; }
+
+        [BsonRepresentation(MongoDB.Bson.BsonType.String)]
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+        public Dictionary<string, string>[]? Task { get; set; }
+#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
 
         public DateTime today { get; set; }
     }

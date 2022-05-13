@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Todo.core
 {
-    class StringOrInt32Serializer
+    public interface IUserService
     {
+        List<Users> GetUsers();
+
+        Users AddUsers(Users user);
+
     }
 }

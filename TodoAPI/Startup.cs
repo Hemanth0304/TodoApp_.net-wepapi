@@ -37,6 +37,7 @@ namespace TodoAPI
             services.AddSingleton<IDbClient, DbClient>();
             services.Configure<TodoDBConfig>(Configuration);
             services.AddTransient<ITodoservices, Todoservices>();
+            services.AddTransient<IUserService, UserService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
