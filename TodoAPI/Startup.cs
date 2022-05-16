@@ -47,7 +47,7 @@ namespace TodoAPI
                         ValidateIssuerSigningKey =true,
 
                         ValidIssuer ="https://localhost:5001",
-                        ValidAudience = "https://localhost:5001",
+                        ValidAudience = "https://localhost:4200",
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecrectKey@345"))
                     };
                 });

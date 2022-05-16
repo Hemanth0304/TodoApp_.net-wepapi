@@ -14,6 +14,8 @@ namespace Todo.core
 
         public string Id { get; set; }
 
+        public string IEmpId { get; set; }
+
         public string userame { get; set; }
 
         public string Password { get; set; }

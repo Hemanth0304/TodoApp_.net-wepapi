@@ -9,8 +9,11 @@ namespace Todo.core
    public interface ITodoservices
     {
         List<Todos> GetTodos();
+        List<Todos> GetDoneTodos();
 
         Todos AddTodo(Todos todo);
+
+        Todos GetTask(string id);
 
         void DeleteTask(string id);
 

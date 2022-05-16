@@ -20,19 +20,34 @@ namespace Todo.core
             return todo;
         }
 
+
+
         public void DeleteTask(string id)
         {
             _todos.DeleteOne(todo => todo.Id == id);
         }
+
+
+
+        public List<Todos> GetDoneTodos()
+        { 
+            return _todos.Find(todo => todo.Status == true).ToList();
+        }
+
+        public Todos GetTask(string id) => _todos.Find(todo => todo.Id == id).First();
 
         public List<Todos> GetTodos()
         {
           return  _todos.Find(todo => true).ToList();
         }
 
+      
+
         public Todos UpdateTask(Todos todo)
         {
-            throw new NotImplementedException();
+            GetTask(todo.Id);
+            _todos.ReplaceOne(a => a.Id == todo.Id, todo);
+            return todo;
         }
     }
 }

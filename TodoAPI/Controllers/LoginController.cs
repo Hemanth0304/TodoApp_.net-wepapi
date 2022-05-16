@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TodoAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {

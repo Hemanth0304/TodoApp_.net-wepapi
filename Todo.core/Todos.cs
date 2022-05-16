@@ -15,6 +15,8 @@ namespace Todo.core
 
         public string Id { get; set; }
 
+        public string IEmpId { get; set; }
+
         public string title { get; set; }
 
         public string decsription { get; set; }
@@ -23,9 +25,9 @@ namespace Todo.core
 
         public string Name { get; set; }
 
-       [BsonElement("Task")]
+        [BsonElement("Task")]
 #pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-        public Dictionary<string, string>[]? Task { get; set; }
+        public Dictionary<string, object>[] Task { get; set; }
 #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
 
         public DateTime today { get; set; }

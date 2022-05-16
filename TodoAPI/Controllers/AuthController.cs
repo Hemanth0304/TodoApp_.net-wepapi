@@ -17,14 +17,14 @@ namespace TodoAPI.Controllers
     public class AuthController : ControllerBase
     {
 
-        [HttpPost, Route("Login")]
+        [HttpPost, Route("Todo")]
 
         public IActionResult Login([FromBody]Users user)
         {
             if (user == null)
                 return BadRequest("Invalid Login");
 
-            if(user.userame =="Hemanth" && user.Password =="Pass@123")
+            if(user.userame == "Hemanth" && user.Password == "Pass@123" )
             {
                 var secrectKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecrectKey@345"));
                 var signingCredentials = new SigningCredentials(secrectKey, SecurityAlgorithms.HmacSha256);
@@ -32,7 +32,7 @@ namespace TodoAPI.Controllers
                 var tokenOptions = new JwtSecurityToken(
 
                     issuer: "https://localhost:5001",
-                    audience: "https://localhost:5001",
+                    audience: "https://localhost:4200",
                     claims: new List<Claim>(),
                     expires: DateTime.Now.AddMinutes(5),
                     signingCredentials: signingCredentials
