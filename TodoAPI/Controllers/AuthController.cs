@@ -16,34 +16,60 @@ namespace TodoAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IUserService _UserServices;
+        public AuthController(IUserService userservices)
+        {
+            _UserServices = userservices;
+        }
 
         [HttpPost, Route("Todo")]
 
-        public IActionResult Login([FromBody]Users user)
+        public IActionResult Login([FromBody]Users credentials)
         {
-            if (user == null)
-                return BadRequest("Invalid Login");
-
-            if(user.userame == "Hemanth" && user.Password == "Pass@123" )
-            {
-                var secrectKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecrectKey@345"));
-                var signingCredentials = new SigningCredentials(secrectKey, SecurityAlgorithms.HmacSha256);
-
-                var tokenOptions = new JwtSecurityToken(
-
-                    issuer: "https://localhost:5001",
-                    audience: "https://localhost:4200",
-                    claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(5),
-                    signingCredentials: signingCredentials
-                    
-                    );
-
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                return Ok(new { Token = tokenString });
 
             
+            if (credentials == null) { return BadRequest("Invalid Login"); } else
+            {
+
+                var us = _UserServices.GetUsers().Where(a => a.userame == credentials.userame).FirstOrDefault();
+                var ps = _UserServices.GetUsers().Where(a => a.Password == credentials.Password).FirstOrDefault();
+
+                if (us!= null && ps!=null)
+                {
+                    var secrectKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecrectKey@345"));
+                    var signingCredentials = new SigningCredentials(secrectKey, SecurityAlgorithms.HmacSha256);
+
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, credentials.userame ),
+                        new Claim(ClaimTypes.Role, "Admin")
+                    };
+
+                    var tokenOptions = new JwtSecurityToken(
+
+                        issuer: "https://localhost:5001",
+                        audience: "https://localhost:4200",
+                        claims: new List<Claim>(),
+                        expires: DateTime.Now.AddMinutes(5),
+                        signingCredentials: signingCredentials
+
+                        );
+
+                    var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+                    return Ok(new { Token = tokenString,
+                   StatusCode =200,
+                    Message = "Logged in Successfully"
+                    });
+
+
+
+                }
+
             }
+             
+
+
+           
             return Unauthorized();
         }
     }

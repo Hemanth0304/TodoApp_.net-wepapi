@@ -8,6 +8,8 @@ namespace Todo.core
 {
     public interface IUserService
     {
+       List<Users> Userss { get; }
+
         List<Users> GetUsers();
 
         Users AddUsers(Users user);

@@ -14,9 +14,10 @@ namespace Todo.core
         Todos AddTodo(Todos todo);
 
         Todos GetTask(string id);
+        List<Todos> GetOneTask(string IEmpId);
 
         void DeleteTask(string id);
 
-        Todos UpdateTask(Todos todo);
+        Todos UpdateTask(string id,Todos todo);
     }
 }

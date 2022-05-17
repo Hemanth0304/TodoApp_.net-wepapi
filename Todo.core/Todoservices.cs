@@ -31,10 +31,12 @@ namespace Todo.core
 
         public List<Todos> GetDoneTodos()
         { 
-            return _todos.Find(todo => todo.Status == true).ToList();
+            return _todos.Find(todo => todo.Status == true ).ToList();
         }
 
-        public Todos GetTask(string id) => _todos.Find(todo => todo.Id == id).First();
+        public List<Todos> GetOneTask(string IEmpId) => _todos.Find(todo => todo.IEmpId == IEmpId).ToList();
+
+        public Todos GetTask(string id) => _todos.Find(todo => todo.Id == id).FirstOrDefault();
 
         public List<Todos> GetTodos()
         {
@@ -43,7 +45,7 @@ namespace Todo.core
 
       
 
-        public Todos UpdateTask(Todos todo)
+        public Todos UpdateTask(string id, Todos todo )
         {
             GetTask(todo.Id);
             _todos.ReplaceOne(a => a.Id == todo.Id, todo);

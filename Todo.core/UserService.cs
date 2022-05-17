@@ -15,7 +15,10 @@ namespace Todo.core
             _Users = dbClient.GetUserCollection();
         }
 
-      
+        public List<Users> Userss => _Users.Find(user => true).ToList();
+
+        //IEnumerable<object> IUserService.Userss => _Users.Find(user => true).ToList();
+
         public Users AddUsers(Users user)
         {
             _Users.InsertOne(user);

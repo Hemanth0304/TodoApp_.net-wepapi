@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace TodoAPI.Controllers
 
         }
         [HttpGet]
+        //[Authorize(Roles ="Admin")]
         public IActionResult GetTodo()
         {
             
@@ -32,7 +34,16 @@ namespace TodoAPI.Controllers
         public IActionResult GetDoneTodo()
         {
 
-            return Ok(_Todoservices.GetTodos());
+            return Ok(_Todoservices.GetDoneTodos());
+
+        }
+
+        [HttpGet]
+        [ActionName("GetOneTask")]
+        public IActionResult GetOneTask(string IEmpId)
+        {
+
+            return Ok(_Todoservices.GetOneTask(IEmpId));
 
         }
 
@@ -59,10 +70,10 @@ namespace TodoAPI.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult UpdateTask(Todos todo)
+        [HttpPut("{id}")]
+        public IActionResult UpdateTask(string id, Todos todo)
         {
-            return Ok(_Todoservices.UpdateTask(todo));
+            return Ok(_Todoservices.UpdateTask(id, todo));
         }
 
 
